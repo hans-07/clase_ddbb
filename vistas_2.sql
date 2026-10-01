@@ -29,3 +29,18 @@ ON e.departamento_id = d.id;
 
 -- Se consultan igual que una tabla normal
 SELECT * FROM v_empleado_alto_salario;
+
+-- OPERACIONES DML en vistas simples
+
+-- INSERT (solo en vistas simples actualizables)
+INSERT INTO v_empleado_alto_salario(id,nombre,salario)
+    VALUES(151,'Juan Pérez',1550000);
+
+-- UPDATE
+UPDATE v_empleado_alto_salario
+    SET salario = salario * 1.1
+    WHERE id = 13;
+
+-- DELETE
+DELETE FROM v_empleado_alto_salario
+    WHERE salario < 1100000;
