@@ -12,6 +12,7 @@ SELECT nombre, fecha_contrato, salario
 FROM t_empleado
 WHERE YEAR(fecha_contrato) = YEAR(CURDATE()); -- Curdate: Fecha Actual
 
+
 -- VISTA COMPLEJA
 
 -- VISTA COMPLEJA: Empleados con información del departamento
@@ -25,12 +26,14 @@ FROM t_empleado e
 INNER JOIN t_departamento d
 ON e.departamento_id = d.id; 
 
+
 -- CONSULTAR VISTAS
 
 -- Se consultan igual que una tabla normal
 SELECT * FROM v_empleado_alto_salario;
 
--- OPERACIONES DML en vistas simples
+
+-- OPERACIONES DML (Data Manipulation Languaje) EN VISTAS SIMPLES
 
 -- INSERT (solo en vistas simples actualizables)
 INSERT INTO v_empleado_alto_salario(id,nombre,salario)
@@ -44,3 +47,6 @@ UPDATE v_empleado_alto_salario
 -- DELETE
 DELETE FROM v_empleado_alto_salario
     WHERE salario < 1100000;
+
+-- ELIMINAR VISTA
+DROP VIEW v_empleado_alto_salario;
