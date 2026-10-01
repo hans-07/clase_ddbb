@@ -24,3 +24,8 @@ SELECT
 FROM t_empleado e
 INNER JOIN t_departamento d
 ON e.departamento_id = d.id; 
+
+-- CONSULTAR VISTAS
+
+-- Se consultan igual que una tabla normal
+SELECT * FROM v_empleado_alto_salario;
