@@ -265,3 +265,8 @@ INSERT INTO t_cliente (nombre, ciudad, fecha_registro) VALUES
 CREATE INDEX i_ciudad ON t_cliente(ciudad);
 
 SHOW INDEX FROM t_cliente;
+
+-- ELIMINACION DE UN INDICE
+-- DROP INDEX nombre_indice ON nombre_tabla
+
+DROP INDEX i_ciudad ON t_cliente;
