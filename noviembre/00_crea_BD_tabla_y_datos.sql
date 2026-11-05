@@ -39,3 +39,10 @@ ORDER BY CAST(precio AS INT) ASC;
 SELECT preducto, precio
 FROM t_venta
 ORDER BY CAST(precio AS DECIMAL(10,2));
+
+SELECT 
+    producto,
+    CONCAT('$',precio) AS precio_formato,
+    cantidad,
+    DATE_FORMAT(CAST(fecha_venta AS DATE),'%d%m%Y') AS fecha_formato
+FROM t_venta;
