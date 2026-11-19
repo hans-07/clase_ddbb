@@ -219,3 +219,15 @@ SELECT
     END AS categoria_cliente
 FROM t_cliente;
 
+-- Correcion
+SELECT
+    id,
+    nombre,
+    total_compras,
+    CASE
+        WHEN total_compras IS NULL OR total_compras < 20000 THEN 'Nuevo'
+        WHEN total_compras > 1000000 THEN 'VIP'
+        WHEN total_compras BETWEEN 500000 AND 1000000 THEN 'Premium'
+        WHEN total_compras BETWEEN 20000 AND 500000 THEN 'Normal'
+    END AS categoria_cliente
+FROM t_cliente;
