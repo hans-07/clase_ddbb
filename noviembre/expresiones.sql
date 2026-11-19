@@ -205,3 +205,17 @@ SELECT
     END AS bono_extra
 FROM t_empleado;
 
+-- EJERCICIO 3
+
+SELECT
+    id,
+    nombre,
+    total_compras,
+    CASE
+        WHEN total_compras > 1000000 THEN 'VIP'
+        WHEN total_compras BETWEEN 500000 AND 1000000 THEN 'Premium'
+        WHEN total_compras BETWEEN 20000 AND 500000 THEN 'Normal'
+        ELSE 'Nuevo'
+    END AS categoria_cliente
+FROM t_cliente;
+
